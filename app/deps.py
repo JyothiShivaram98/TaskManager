@@ -1,16 +1,16 @@
-import load_dotenv
-from dotenv import load_dotenv
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jose import jwt, JWTError
 from sqlalchemy.orm import Session
-import os
 from app.database import SessionLocal
 from app import models
-from dotenv import load_dotenv
+
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/token")
+from dotenv import load_dotenv
+import os
 
 load_dotenv()
+
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 ALGORITHM = "HS256"
